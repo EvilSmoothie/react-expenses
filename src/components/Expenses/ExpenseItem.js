@@ -8,7 +8,7 @@ const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
 
   const clickHandler = () => {
-    setTitle(prompt('Enter new title'));
+    setTitle(prompt("Enter new title"));
   };
 
   return (
