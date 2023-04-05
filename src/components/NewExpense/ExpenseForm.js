@@ -47,8 +47,11 @@ const submitHandler = (e) => {
         amount: enteredAmount,
         date: new Date(enteredDate)
     };
-
     console.log(expenseData);
+    setEnteredAmount('');
+    setEnteredDate('');
+    setEnteredTitle('');
+  
 
 }
 
@@ -57,7 +60,7 @@ const submitHandler = (e) => {
       <div className="new-expense__controls">
         <div className="new-expense__cojntrol">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input type="text" value={enteredTitle} onChange={titleChangeHandler} />
         </div>
         <div className="new-expense__cojntrol">
           <label>Amount</label>
@@ -65,6 +68,7 @@ const submitHandler = (e) => {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -74,6 +78,7 @@ const submitHandler = (e) => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
+            value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
